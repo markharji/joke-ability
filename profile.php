@@ -82,6 +82,7 @@ $user_id = $userRow['id'];
 									}
 
 								        $result= mysqli_query($con, "SELECT * FROM jokes where user_id=$user_id order by id DESC") or die (mysqli_error());
+								        if(mysqli_num_rows($result)!=0){
 								                    while ($row= mysqli_fetch_array ($result) ){
 								                    	 $id=$row['id'];
 								                    	 $userid=$row['user_id'];
@@ -107,7 +108,11 @@ $user_id = $userRow['id'];
 				            </div>
 									</div>
 							</div>
-						<?php } ?>
+						<?php }}
+						else{
+							echo "<h1 style='text-align:center;'>You dont have Jokes \n Click This link</h1>";
+							?><a href="addjoke.php" style="margin-bottom: 500px;color:margin:auto;" class="btn btn-primary">Add Joke</a><?php 
+						} ?>
 			    		</div><!-- END-->
 			    		<div class="row">
 			          <div class="col">

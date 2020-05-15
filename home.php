@@ -65,7 +65,7 @@ $user_id = $userRow['id'];
 			</nav>
 
 			<div class="colorlib-footer">
-				<h1 id="colorlib-logo" class="mb-4"><a href="home.php?page=1" style="background-image: url(images/bg_1.jpg);">Joke <span>Ability</span></a></h1>
+				<h1 id="colorlib-logo" class="mb-3"><a href="home.php?page=1" style="background-image: url(images/bg_1.jpg);">Joke <span>Ability</span></a></h1>
 				<?php include "sidebarprof.php"; ?>
 				</div>
 			

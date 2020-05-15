@@ -20,10 +20,11 @@ if(isset($_POST['regbtn'])){
          $ext = $path['extension'];
          $temp_name = $_FILES['image']['tmp_name'];
          $path_filename_ext = $target_dir.$filename.".".$ext;
-        // Check if file already exists
-        if (file_exists($path_filename_ext)) {
-         $msg= "<p style='color:red;'><strong>File Name already Exist. Please Change FileName.</strong></p>";
-         }else{
+     }
+     else{
+     	$file = "noimage.png";
+     }
+
          move_uploaded_file($temp_name,$path_filename_ext);
          $sql= "INSERT INTO users(firstname,lastname,username,password,email,profile_image) values('$fname','$lname','$username','$password','$email','$file')";
             if(mysqli_query($con, $sql)){
@@ -31,12 +32,12 @@ if(isset($_POST['regbtn'])){
                   ?>
                   <script>
                       alert("Successfully Registered");
-                      location.replace("index.php")
+                    location.replace("index.php")
                   </script>
                   <?php
                  }
-                }
-                }
+                
+              
             
             
      mysqli_close($con);
@@ -73,21 +74,21 @@ if(isset($_POST['regbtn'])){
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="fname" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control" name="fname" placeholder="First Name *" value="" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="lname" placeholder="Last Name *" value="" />
+                                            <input type="text" class="form-control" name="lname" placeholder="Last Name *" value="" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" name="password" placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" name="password" placeholder="Password *" value="" required/>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="username" placeholder="Your Username*" value="" />
+                                            <input type="text" class="form-control" name="username" placeholder="Your Username*" value="" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" name="email" class="form-control" placeholder="Your Email*" value="" />
+                                            <input type="email" name="email" name="email" class="form-control" placeholder="Your Email*" value="" required/>
                                         </div>
                                         <div class="form-group">
                                             <input type="file" class="form-control" name="image" placeholder="Upload Profile*" value="" />

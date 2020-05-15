@@ -60,7 +60,7 @@ if(isset($_GET['id'])){
 				<ul>
 					<li ><a href="home.php?page=1">Home</a></li>
 					<li><a href="jokers.php">Jokers</a></li>
-					<li><a href="profile.php">My Jokes</a></li>
+					<li><a href="profile.php?page=1">My Jokes</a></li>
 					<li><a href="addjoke.php">Add Joke</a></li>
 					<li><a href="logout.php?logout">Logout</a></li>
 

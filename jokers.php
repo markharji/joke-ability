@@ -71,7 +71,7 @@ $user_id = $userRow['id'];
 					<div class="row px-md-4">
 
 	 					<?php 
-	 				
+	 						$rating=0;
 							$result= mysqli_query($con, "SELECT * FROM users order by id DESC") or die (mysqli_error());
 								while ($row= mysqli_fetch_array ($result) ){
 									$id=$row['id'];
@@ -83,10 +83,12 @@ $user_id = $userRow['id'];
 									$total=mysqli_num_rows($totalres);
 								    $tempfunnyrate=mysqli_query($con, "SELECT * FROM jokes INNER JOIN funny ON jokes.id = funny.joke_id WHERE jokes.user_id = $id && funny.rate='funny'");
 								    $totalfunny=mysqli_num_rows($tempfunnyrate);
+								    if($totalfunny){
 								    $rating = ceil(($totalfunny/$total) * 100);
+									}
 								    if($rating >= 85){
 								          
-						?>   
+						?> 
 						<div class="col-md-12">
 							<div class="blog-entry ftco-animate d-md-flex">
 								<a href="jokerprofile.php?id=<?php echo $id."&page=1";?>" class="img img-2" style="background-image: url(profile/<?php echo $row['profile_image']; ?>);"></a>
@@ -97,11 +99,13 @@ $user_id = $userRow['id'];
 		              		<span><a href="jokerprofile.php?id=<?php echo $id."&page=1";?>">@<?php echo $row['username']; ?></a></span>
 		              		<span><a ><i class="icon-folder-o mr-2"></i>Jokes Counter: </a></span>
 		              		<span style="color:black"><?php echo $total; ?></span>
+
+
 		              	</p>
 	              	</div>
-		              <p class="mb-4">Rating: <?php echo $rating."%"; ?><br>
-		              	<h3>Latest Joke</h3>
-		              	<h4>Title: <?php echo $latest['title'] ?></h4>
+		              <p class="mb-4"><span><img src="images/badge.png" height="60" width="40"></span>Rating: <?php echo $rating."%"; ?><br>
+		              	<h4>Latest Joke</h4>
+		              	<h5>Title: <?php echo $latest['title'] ?></h5>
 		              	<?php echo $latest['content'] ?>
 
 </p>

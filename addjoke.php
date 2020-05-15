@@ -89,7 +89,7 @@ if(isset($_POST['jokebtn'])){
 	      <div class="container">
 	        <div class="row d-flex mb-5 contact-info">
 	          <div class="col-md-12 mb-4">
-	            <h2 class="h3">Add Your Joke Here!!!</h2>
+	            <h2 class="h3">Add Your Joke Here!!!</h2><hr>
 	          </div>
 	        </div>
 	        <div class="row block-9">

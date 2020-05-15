@@ -7,9 +7,11 @@
 				?>
 
 			<div class="mb-4">
-					<h3>Joker Profile!!</h3>
+				<h3>Joker Profile!!</h3>
             	<div>Username: </i><?php echo $currentprof['username'] ?></div>
 				<div>First Name: <?php echo $currentprof['firstname']?></div>
 				<div>Last Name: <?php echo $currentprof['lastname']?></div>
-				<div>Rating: <?php echo $rating."%";?></div>
+				<div><?php if($rating>=85){
+					echo "<span><img src='images/badge.png' height='50' width='30'></span>";
+				} ?>Rating: <?php echo $rating."%";?></div>
           </form>

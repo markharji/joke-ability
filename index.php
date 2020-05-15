@@ -53,10 +53,10 @@ $error="";
                                 <div class="row register-form">
                                     <div class="col-md-9" style="margin: auto">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="username" placeholder="Username *" value="" />
+                                            <input type="text" class="form-control" name="username" placeholder="Username *" value="" required />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" name="pass" placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" name="pass" placeholder="Password *" value="" required/>
                                         </div>
                                       <div><?php echo $error; ?></div>
                                         <div class="form-group">
